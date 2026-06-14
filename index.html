@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--
+================================================================================
+FILE: index.html
+================================================================================
+DEVELOPER DOCUMENTATION:
+LINES 1-30: Document Metadata & Styling Imports.
+LINES 31-70: Global Floating Sticky Navbar with SVG Brand Logo & Menu list.
+LINES 71-95: Hero section displaying editorial headline.
+LINES 96-120: Featured Stories Section. Rendered dynamically via app.js.
+LINES 121-140: Latest Updates Grid Section (masonry rendering).
+LINES 141-170: Interactive Category Cards layout.
+LINES 171-220: Investor and Subsidiary Activity Highlight columns.
+LINES 221-255: Footer Layout with site links and copyright markings.
+LINES 256-285: Search System Overlay markup and main JS inclusion.
+================================================================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aoura Insights - The Intelligence Hub of Aoura Group</title>
+    <meta name="description" content="The official publication for corporate news, investor relations, investments, product launches, partnerships, and achievements of Aoura Group.">
+    <!-- Premium CSS Design System -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- Floating Sticky Navbar -->
+    <nav class="navbar" id="main-nav">
+        <div class="container">
+            <a href="index.html" class="brand" id="brand-logo" aria-label="Aoura Insights Home">
+                <svg class="brand-img" width="220" height="38" viewBox="0 0 220 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="27" font-family="'Inter', sans-serif" font-weight="900" font-size="22" fill="#000000" letter-spacing="-0.06em">AOURA</text>
+                    <text x="96" y="27" font-family="'Inter', sans-serif" font-weight="300" font-size="22" fill="#737373" letter-spacing="-0.02em">INSIGHTS</text>
+                </svg>
+            </a>
+            <ul class="nav-menu" id="navbar-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="investments.html" class="nav-link">Investments</a></li>
+                <li><a href="investor-relations.html" class="nav-link">Investor Relations</a></li>
+                <li><a href="product-launches.html" class="nav-link">Product Launches</a></li>
+                <li><a href="company-updates.html" class="nav-link">Company Updates</a></li>
+                <li><a href="partnerships.html" class="nav-link">Partnerships</a></li>
+                <li><a href="branches.html" class="nav-link">Branches</a></li>
+                <li><a href="newsroom.html" class="nav-link">Newsroom</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li>
+                    <button class="search-trigger" id="open-search-btn" aria-label="Open Search">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+            <button class="menu-toggle" id="mobile-hamburger" aria-label="Toggle Mobile Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Large Editorial Hero Section -->
+    <header class="hero" id="home-hero">
+        <div class="container">
+            <span class="text-meta hero-meta">AOURA INTEL</span>
+            <h1 class="hero-title">The Official Intelligence Hub <br>of Aoura Group</h1>
+            <p class="text-lead hero-desc">A premium corporate chronicle for institutional shareholders, strategic venture partners, and media houses. Insights on global investments, spatial software pipelines, and subsidiary activity.</p>
+            <div style="display:flex; gap: var(--space-sm);">
+                <a href="newsroom.html" class="btn" id="hero-cta-primary">Browse Newsroom</a>
+                <a href="about.html" class="btn btn-secondary" id="hero-cta-secondary">About Platform</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Stories Section -->
+    <section class="section-featured" id="featured-insights">
+        <div class="container">
+            <h2 class="text-meta">Featured Briefings</h2>
+            <div class="featured-grid">
+                <!-- Dynamically Rendered via assets/js/app.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Updates Grid Section -->
+    <section class="section-latest" id="latest-announcements">
+        <div class="container">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: var(--space-md);">
+                <h2>Latest Announcements</h2>
+                <a href="newsroom.html" class="text-meta" style="border-bottom:1px solid currentColor;">View All</a>
+            </div>
+            <div class="latest-grid">
+                <!-- Dynamically Rendered via assets/js/app.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Category Portals -->
+    <section class="section-categories" id="quick-categories">
+        <div class="container">
+            <h2 class="text-meta">Intelligence Channels</h2>
+            <div class="categories-grid">
+                <a href="investments.html" class="cat-card reveal-element">
+                    <span class="cat-card-title">Investments</span>
+                    <span class="cat-card-desc">Strategic acquisitions, joint ventures, and capital investments.</span>
+                </a>
+                <a href="investor-relations.html" class="cat-card reveal-element">
+                    <span class="cat-card-title">Investor Relations</span>
+                    <span class="cat-card-desc">Annual and quarterly audits, shareholder compliance sheets.</span>
+                </a>
+                <a href="product-launches.html" class="cat-card reveal-element">
+                    <span class="cat-card-title">Product Launches</span>
+                    <span class="cat-card-desc">Spatial operating systems, computing devices, and releases.</span>
+                </a>
+                <a href="company-updates.html" class="cat-card reveal-element">
+                    <span class="cat-card-title">Company Updates</span>
+                    <span class="cat-card-desc">Global scale milestones, achievements, and structural developments.</span>
+                </a>
+                <a href="partnerships.html" class="cat-card reveal-element">
+                    <span class="cat-card-title">Partnerships</span>
+                    <span class="cat-card-desc">Consortia, supplier alliances, and international venture deals.</span>
+                </a>
+                <a href="branches.html" class="cat-card reveal-element">
+                    <span class="cat-card-title">Branches</span>
+                    <span class="cat-card-desc">Financial activity updates from products and services subsidiaries.</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investor & Subsidiary Highlights Section -->
+    <section class="section-highlights" id="group-highlights">
+        <div class="container">
+            <h2>Corporate Highlights</h2>
+            <div class="highlights-split">
+                <!-- Column 1: Financial & Investment Activities -->
+                <div class="highlight-column">
+                    <h3 class="text-meta">Investments & Financials</h3>
+                    <div class="highlight-item reveal-element">
+                        <span class="highlight-item-meta">ACQUISITION</span>
+                        <h4 class="highlight-item-title">Vortex Media ($450M)</h4>
+                        <p class="highlight-item-desc">Finalized digital publication platform integration to bolster adtech reach.</p>
+                    </div>
+                    <div class="highlight-item reveal-element">
+                        <span class="highlight-item-meta">ANNUAL REPORT</span>
+                        <h4 class="highlight-item-title">Fiscal 2025 Audit Sheet</h4>
+                        <p class="highlight-item-desc">Consolidated group revenues reached record highs of $3.2 Billion.</p>
+                    </div>
+                </div>
+
+                <!-- Column 2: Operations & Product Milestones -->
+                <div class="highlight-column">
+                    <h3 class="text-meta">Operations & Launches</h3>
+                    <div class="highlight-item reveal-element">
+                        <span class="highlight-item-meta">SPATIAL COMPUTING</span>
+                        <h4 class="highlight-item-title">Aoura OS Developer Seed</h4>
+                        <p class="highlight-item-desc">Released initial virtualized edge workspaces for key corporate partners.</p>
+                    </div>
+                    <div class="highlight-item reveal-element">
+                        <span class="highlight-item-meta">ALLIANCE</span>
+                        <h4 class="highlight-item-title">Tesla Green Battery Grids</h4>
+                        <p class="highlight-item-desc">Deploying 1.2 GWh of Megapack structures across server infrastructure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer class="footer" id="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <svg width="220" height="38" viewBox="0 0 220 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="27" font-family="'Inter', sans-serif" font-weight="900" font-size="22" fill="#ffffff" letter-spacing="-0.06em">AOURA</text>
+                        <text x="96" y="27" font-family="'Inter', sans-serif" font-weight="300" font-size="22" fill="#a3a3a3" letter-spacing="-0.02em">INSIGHTS</text>
+                    </svg>
+                    <p class="footer-brand-desc">Official newsroom, strategic investments tracker, and publication channel of Aoura Group.</p>
+                </div>
+                <div>
+                    <h3 class="footer-col-title">Main Directories</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home Portal</a></li>
+                        <li><a href="newsroom.html" class="footer-link">Chronological Feed</a></li>
+                        <li><a href="about.html" class="footer-link">About Publications</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-col-title">Ecosystem</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://aouragrp.com" target="_blank" rel="noopener" class="footer-link">Aoura Group</a></li>
+                        <li><a href="https://products.aouragrp.com" target="_blank" rel="noopener" class="footer-link">Aoura Products</a></li>
+                        <li><a href="https://services.aouragrp.com" target="_blank" rel="noopener" class="footer-link">Aoura Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-col-title">Compliance</h3>
+                    <ul class="footer-links">
+                        <li><a href="investor-relations.html" class="footer-link">Investor Relations</a></li>
+                        <li><a href="#" class="footer-link">Compliance Statements</a></li>
+                        <li><a href="#" class="footer-link">Press Kit Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="footer-copy">&copy; 2026 Aoura Group. All rights reserved.</span>
+                <span class="footer-extra">DESIGNED &bull; TO &bull; INSPIRE</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Client-side Search Overlay -->
+    <div class="search-overlay" id="search-modal" aria-hidden="true">
+        <div class="search-container">
+            <div class="search-header">
+                <input type="text" class="search-input" id="search-modal-input" placeholder="Type key terms to search news..." aria-label="Search articles">
+                <button class="search-close" id="close-search-btn" aria-label="Close Search">&times;</button>
+            </div>
+            <div class="search-results" id="search-results-list">
+                <!-- Filled dynamically based on keystrokes in app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
