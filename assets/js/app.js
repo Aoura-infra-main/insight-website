@@ -41,11 +41,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         renderNewsroomPage();
     } else if ([
         'investments.html', 
-        'investor-relations.html', 
-        'product-launches.html', 
-        'company-updates.html', 
-        'partnerships.html', 
-        'branches.html'
+        'research.html', 
+        'markets.html', 
+        'leadership.html', 
+        'reports.html'
     ].includes(pageName)) {
         renderCategoryPage(pageName);
     }
@@ -229,11 +228,10 @@ function renderHomepage() {
 function renderCategoryPage(filename) {
     const categoryMapping = {
         'investments.html': 'Investments',
-        'investor-relations.html': 'Investor Relations',
-        'product-launches.html': 'Product Launches',
-        'company-updates.html': 'Company Updates',
-        'partnerships.html': 'Partnerships',
-        'branches.html': 'Branches'
+        'research.html': 'Research',
+        'markets.html': 'Markets',
+        'leadership.html': 'Leadership',
+        'reports.html': 'Reports'
     };
 
     const targetCategory = categoryMapping[filename];
@@ -243,7 +241,7 @@ function renderCategoryPage(filename) {
     const filtered = AppState.articles.filter(a => a.category === targetCategory);
 
     if (filtered.length === 0) {
-        categoryGrid.innerHTML = `<div style="grid-column: span 3; text-align: center; padding: 4rem 0;"><p class="text-lead">No announcements published under ${targetCategory} yet.</p></div>`;
+        categoryGrid.innerHTML = `<div style="grid-column: span 3; text-align: center; padding: 4rem 0;"><p class="text-lead">No publications under ${targetCategory} yet.</p></div>`;
         return;
     }
 
@@ -274,7 +272,14 @@ function renderNewsroomPage() {
     const newsroomGrid = document.querySelector('.newsroom-grid');
     if (!newsroomGrid) return;
 
-    newsroomGrid.innerHTML = AppState.articles.map(item => `
+    const filtered = AppState.articles.filter(a => a.category === 'Newsroom');
+
+    if (filtered.length === 0) {
+        newsroomGrid.innerHTML = `<div style="grid-column: span 3; text-align: center; padding: 4rem 0;"><p class="text-lead">No newsroom releases published yet.</p></div>`;
+        return;
+    }
+
+    newsroomGrid.innerHTML = filtered.map(item => `
         <div class="story-card reveal-element">
             <div class="story-img-container">
                 <img class="story-img" src="${item.coverImage}" alt="${item.title}">
@@ -331,15 +336,19 @@ async function renderArticleReader() {
         // Render metadata headers
         if (header) {
             header.innerHTML = `
-                <span class="article-category-label">${articleMeta.category}</span>
-                <h1 class="article-title">${articleMeta.title}</h1>
-                <p class="article-subtitle">${articleMeta.subtitle}</p>
-                <div class="article-meta-group">
-                    <div class="article-author-info">
-                        <div class="article-author-avatar">${articleMeta.author.charAt(0)}</div>
-                        <span class="article-author-name">${articleMeta.author}</span>
+                <div class="container">
+                    <div class="reading-container">
+                        <span class="article-category-label">${articleMeta.category}</span>
+                        <h1 class="article-title">${articleMeta.title}</h1>
+                        <p class="article-subtitle">${articleMeta.subtitle}</p>
+                        <div class="article-meta-group">
+                            <div class="article-author-info">
+                                <div class="article-author-avatar">${articleMeta.author.charAt(0)}</div>
+                                <span class="article-author-name">${articleMeta.author}</span>
+                            </div>
+                            <span class="text-meta" style="margin-left:auto;">${articleMeta.date} &nbsp;•&nbsp; ${articleMeta.readingTime}</span>
+                        </div>
                     </div>
-                    <span class="text-meta" style="margin-left:auto;">${articleMeta.date} &nbsp;•&nbsp; ${articleMeta.readingTime}</span>
                 </div>
             `;
         }
