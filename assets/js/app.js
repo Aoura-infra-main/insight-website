@@ -337,11 +337,17 @@ async function renderArticleReader() {
 
         // Render metadata headers
         if (header) {
+            const isLaser = articleId === 'aoura-laser-protective-lens-launch';
+            if (isLaser) {
+                header.classList.add('laser-article-header');
+            } else {
+                header.classList.remove('laser-article-header');
+            }
             header.innerHTML = `
                 <div class="container">
                     <div class="reading-container">
                         <span class="article-category-label">${articleMeta.category}</span>
-                        <h1 class="article-title">${articleMeta.title}</h1>
+                        <h1 class="article-title ${isLaser ? 'laser-article-title' : ''}">${articleMeta.title}</h1>
                         <p class="article-subtitle">${articleMeta.subtitle}</p>
                         <div class="article-meta-group">
                             <div class="article-author-info">

@@ -594,6 +594,23 @@ a {
     letter-spacing: -0.04em;
 }
 
+/* Custom laser article styling to stretch full width and have a smaller font size */
+.laser-article-header .reading-container {
+    max-width: 100%;
+}
+
+.laser-article-title {
+    font-size: clamp(1.4rem, 2.5vw, 2.0rem) !important;
+    letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+    .laser-article-title {
+        font-size: 1.3rem !important;
+        line-height: 1.25;
+    }
+}
+
 .article-subtitle {
     font-size: clamp(1.15rem, 2.5vw, 1.4rem);
     color: var(--text-secondary);
@@ -1233,5 +1250,24 @@ textarea.form-control {
 
     .footer-brand-desc {
         font-size: 0.85rem;
+    }
+
+    /* Mobile typography scaling for better article readability */
+    .article-body-content {
+        font-size: 1.05rem !important;
+        line-height: 1.65 !important;
+    }
+    .article-body-content p {
+        font-size: 1.05rem !important;
+        line-height: 1.65 !important;
+        margin-bottom: var(--space-sm) !important;
+    }
+    .article-body-content h2 {
+        font-size: 1.35rem !important;
+        margin-top: var(--space-md) !important;
+    }
+    .article-body-content ul, .article-body-content ol {
+        margin-left: var(--space-sm) !important;
+        padding-left: var(--space-sm);
     }
 }
