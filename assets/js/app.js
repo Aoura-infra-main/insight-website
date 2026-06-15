@@ -322,6 +322,9 @@ async function renderArticleReader() {
 
     // Update Meta Title in browser
     document.title = `${articleMeta.title} - Aoura Insights`;
+    
+    // Dynamic SEO optimizations
+    updateSEOHeaders(articleMeta);
 
     // Fetch Article Body payload
     try {
@@ -400,22 +403,40 @@ async function renderArticleReader() {
  */
 function buildTableOfContents() {
     const tocList = document.querySelector('.article-toc-list');
+    const mobileTocList = document.getElementById('mobile-toc-list-ul');
     const bodyHeadings = document.querySelectorAll('.article-body-content h2');
 
-    if (!tocList) return;
     if (bodyHeadings.length === 0) {
         const leftSidebar = document.querySelector('.article-sidebar-left');
         if (leftSidebar) leftSidebar.style.display = 'none';
+        const mobileToggle = document.getElementById('toc-mobile-btn');
+        if (mobileToggle) mobileToggle.style.display = 'none';
         return;
     }
 
-    tocList.innerHTML = Array.from(bodyHeadings).map((heading, index) => {
-        // Set an ID to headings for anchor tracking if not already set
-        const anchorId = `section-${index}`;
-        heading.setAttribute('id', anchorId);
-        
-        return `<li><a class="article-toc-link" href="#${anchorId}">${heading.textContent}</a></li>`;
-    }).join('');
+    // Assign anchor IDs to all headings
+    bodyHeadings.forEach((heading, index) => {
+        if (!heading.getAttribute('id')) {
+            heading.setAttribute('id', `section-${index}`);
+        }
+    });
+
+    if (tocList) {
+        tocList.innerHTML = Array.from(bodyHeadings).map(heading => {
+            const anchorId = heading.getAttribute('id');
+            return `<li><a class="article-toc-link" href="#${anchorId}">${heading.textContent}</a></li>`;
+        }).join('');
+    }
+
+    if (mobileTocList) {
+        mobileTocList.innerHTML = Array.from(bodyHeadings).map(heading => {
+            const anchorId = heading.getAttribute('id');
+            return `<li><a href="#${anchorId}">${heading.textContent}</a></li>`;
+        }).join('');
+    }
+
+    // Initialize Mobile TOC Interactions
+    initMobileTocEvents();
 }
 
 /**
@@ -518,4 +539,76 @@ function initShareButtons(meta) {
                 });
         });
     }
+}
+
+/**
+ * Initializes interactions and slide events for the mobile Table of Contents drawer.
+ */
+function initMobileTocEvents() {
+    const mobileBtn = document.getElementById('toc-mobile-btn');
+    const drawer = document.getElementById('mobile-toc-drawer');
+    const closeBtn = document.getElementById('mobile-toc-close-btn');
+    const overlay = document.getElementById('mobile-toc-overlay');
+    const links = document.querySelectorAll('#mobile-toc-list-ul a');
+
+    if (!mobileBtn || !drawer || !overlay) return;
+
+    function openDrawer() {
+        drawer.classList.add('active');
+        overlay.classList.add('active');
+        drawer.setAttribute('aria-hidden', 'false');
+        overlay.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeDrawer() {
+        drawer.classList.remove('active');
+        overlay.classList.remove('active');
+        drawer.setAttribute('aria-hidden', 'true');
+        overlay.setAttribute('aria-hidden', 'true');
+    }
+
+    mobileBtn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            closeDrawer();
+        });
+    });
+}
+
+/**
+ * Updates SEO meta tags dynamically for search engines and social platforms.
+ */
+function updateSEOHeaders(meta) {
+    // Description meta
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+        metaDescription.setAttribute('content', meta.subtitle);
+    }
+
+    // Open Graph tags
+    updateMetaTag('property', 'og:title', meta.title);
+    updateMetaTag('property', 'og:description', meta.subtitle);
+    updateMetaTag('property', 'og:image', window.location.origin + '/' + meta.coverImage);
+    updateMetaTag('property', 'og:url', window.location.href);
+
+    // Twitter card tags
+    updateMetaTag('name', 'twitter:title', meta.title);
+    updateMetaTag('name', 'twitter:description', meta.subtitle);
+    updateMetaTag('name', 'twitter:image', window.location.origin + '/' + meta.coverImage);
+}
+
+/**
+ * Helper utility to create or update a specific meta tag.
+ */
+function updateMetaTag(attribute, value, content) {
+    let tag = document.querySelector(`meta[${attribute}="${value}"]`);
+    if (!tag) {
+        tag = document.createElement('meta');
+        tag.setAttribute(attribute, value);
+        document.head.appendChild(tag);
+    }
+    tag.setAttribute('content', content);
 }
