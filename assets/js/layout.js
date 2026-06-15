@@ -13,13 +13,13 @@ const LayoutComponents = {
                 </a>
                 <ul class="nav-menu" id="navbar-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="newsroom.html" class="nav-link">Newsroom</a></li>
                     <li><a href="investments.html" class="nav-link">Investments</a></li>
-                    <li><a href="companies.html" class="nav-link">Companies</a></li>
-                    <li><a href="research.html" class="nav-link">Research</a></li>
-                    <li><a href="markets.html" class="nav-link">Markets</a></li>
-                    <li><a href="leadership.html" class="nav-link">Leadership</a></li>
-                    <li><a href="reports.html" class="nav-link">Reports</a></li>
+                    <li><a href="investor-relations.html" class="nav-link">Investor Relations</a></li>
+                    <li><a href="product-launches.html" class="nav-link">Product Launches</a></li>
+                    <li><a href="company-updates.html" class="nav-link">Company Updates</a></li>
+                    <li><a href="partnerships.html" class="nav-link">Partnerships</a></li>
+                    <li><a href="branches.html" class="nav-link">Branches</a></li>
+                    <li><a href="newsroom.html" class="nav-link">Newsroom</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li>
                         <button class="search-trigger" id="open-search-btn" aria-label="Open Search">

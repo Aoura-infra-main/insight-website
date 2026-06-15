@@ -79,7 +79,7 @@ The website will update automatically on GitHub Pages within seconds.
 
 ## 3. Editing Categories
 To add, rename, or edit a category:
-1. **Modify Navigation Links**: Edit the header nav tag in all HTML files (`index.html`, `investments.html`, etc.) to update labels or add links.
+1. **Modify Navigation Links**: Edit the header template inside [layout.js](file:///Users/aravindsaj/Library/CloudStorage/GoogleDrive-ask5615@g.rit.edu/My%20Drive/DeskEssentials/Systems/Insight%20Website/assets/js/layout.js) to update labels or add links.
 2. **Update the JS Router**: In `assets/js/app.js` under the `renderCategoryPage()` function, update the mapping object to pair your filename with the exact category name in your JSON registry:
    ```javascript
    const categoryMapping = {

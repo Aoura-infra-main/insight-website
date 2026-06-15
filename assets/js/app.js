@@ -41,10 +41,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         renderNewsroomPage();
     } else if ([
         'investments.html', 
-        'research.html', 
-        'markets.html', 
-        'leadership.html', 
-        'reports.html'
+        'investor-relations.html', 
+        'product-launches.html', 
+        'company-updates.html', 
+        'partnerships.html', 
+        'branches.html'
     ].includes(pageName)) {
         renderCategoryPage(pageName);
     }
@@ -228,10 +229,11 @@ function renderHomepage() {
 function renderCategoryPage(filename) {
     const categoryMapping = {
         'investments.html': 'Investments',
-        'research.html': 'Research',
-        'markets.html': 'Markets',
-        'leadership.html': 'Leadership',
-        'reports.html': 'Reports'
+        'investor-relations.html': 'Investor Relations',
+        'product-launches.html': 'Product Launches',
+        'company-updates.html': 'Company Updates',
+        'partnerships.html': 'Partnerships',
+        'branches.html': 'Branches'
     };
 
     const targetCategory = categoryMapping[filename];

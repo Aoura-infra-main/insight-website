@@ -107,16 +107,16 @@ Aoura Insights utilizes a minimal, high-contrast, black-and-white editorial aest
 ### Navigation Menu
 The navigation consists of exactly 9 links followed by a search trigger:
 1. `Home` -> `index.html`
-2. `Newsroom` -> `newsroom.html`
-3. `Investments` -> `investments.html`
-4. `Companies` -> `companies.html`
-5. `Research` -> `research.html`
-6. `Markets` -> `markets.html`
-7. `Leadership` -> `leadership.html`
-8. `Reports` -> `reports.html`
+2. `Investments` -> `investments.html`
+3. `Investor Relations` -> `investor-relations.html`
+4. `Product Launches` -> `product-launches.html`
+5. `Company Updates` -> `company-updates.html`
+6. `Partnerships` -> `partnerships.html`
+7. `Branches` -> `branches.html`
+8. `Newsroom` -> `newsroom.html`
 9. `About` -> `about.html`
 
-*Scalability*: New subsidiaries, business segments, or regions should be added under the `Companies` page or represented under specialized tags rather than overcrowding the primary header navigation.
+*Scalability*: New subsidiaries, business segments, or regions should be represented under specialized categories or tags rather than overcrowding the primary header navigation.
 
 ### Footer Structure
 The footer is broken down into four key pillars to align with growth:
@@ -151,13 +151,13 @@ Insight Website/
 │
 ├── index.html                   # Home page portal
 ├── about.html                   # About the publication
-├── companies.html               # Corporate profiles page
+├── investments.html             # Investments listing feed
+├── investor-relations.html      # Investor relations dashboard
+├── product-launches.html        # Product launches feed
+├── company-updates.html         # Company updates feed
+├── partnerships.html            # Partnerships feed
+├── branches.html                # Branches listing page
 ├── newsroom.html                # Media news feed
-├── investments.html             # Investment tracking feed
-├── research.html                # Research paper feed
-├── markets.html                 # Market trend analysis feed
-├── leadership.html              # Executive letter feed
-├── reports.html                 # Corporate report feed
 ├── article.html                 # Dynamic reader layout shell
 │
 ├── CONTEXT.md                   # This master configuration file
@@ -167,6 +167,7 @@ Insight Website/
 │   │   └── styles.css           # Central stylesheet (layout, design system)
 │   ├── js/
 │   │   ├── main.js              # Global DOM animations and scroll handlers
+│   │   ├── layout.js            # Header/Footer injection engine
 │   │   └── app.js               # Dynamic routing, search, and JSON renderer
 │   └── logo/
 │       ├── logo.jpg             # High-resolution corporate logo
