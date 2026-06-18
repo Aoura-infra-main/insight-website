@@ -136,3 +136,47 @@ To link one article to another or to product pages:
 - **Related Articles**: The system matching engine dynamically inspects the `"tags"` array in `articles.json`. Articles that share at least one tag will appear in the "Related Insights" grid footer automatically.
 - **Page Placement**: Categorize your registry block under the appropriate section to direct visitors. To link directly to another page, use a standard anchor:
   `<a href=\"product-launches.html\">Product Launches Portal</a>`
+
+---
+
+## 6. Mobile Responsiveness & Layout Fixes
+
+When maintaining or updating the article page styles, be mindful of **CSS Grid** column mapping behavior across different breakpoints.
+
+### Case Study: Fixing the Horizontal Scroll Bug
+During mobile testing, the article viewer page suffered from a horizontal scroll layout bug where the page could drag sideways. 
+
+#### The Root Cause:
+1. **Desktop Layout**: The `.article-layout` uses a three-column grid: `grid-template-columns: 200px 1fr 200px`. The main article content (`.article-body-wrapper`) is explicitly pinned to the center column with `grid-column: 2`.
+2. **Mobile Breakpoint**: Under `@media (max-width: 1024px)`, the layout is simplified to a single-column flow: `grid-template-columns: 1fr`.
+3. **The Bug**: While the sidebars were successfully re-pinned to `grid-column: 1`, the `.article-body-wrapper` class had no media query override. Because it remained pinned to `grid-column: 2` in a grid with only one defined column, the browser created an implicit second column next to the first one, widening the page width and causing horizontal overflow.
+
+#### The Fix:
+We resolved this in [styles.css](file:///Users/aravindsaj/Library/CloudStorage/GoogleDrive-ask5615@g.rit.edu/My%20Drive/DeskEssentials/Systems/Insight%20Website/assets/css/styles.css) by explicitly overriding the grid column to column `1` on mobile/tablet breakpoints:
+
+```css
+@media (max-width: 1024px) {
+    .article-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    /* Ensure the body content falls back to the first column */
+    .article-body-wrapper {
+        grid-column: 1;
+    }
+    
+    .article-sidebar-left {
+        grid-column: 1;
+        position: static;
+        ...
+    }
+    ...
+}
+```
+
+### Best Practices to Prevent Layout Breaks:
+- **Never hardcode pixel widths**: Always use percentage-based widths or `max-width: 100%` on elements (like images, tables, videos).
+- **Reset Grid Columns**: When changing the number of columns in a CSS Grid (e.g. going from `3` columns to `1`), ensure all child items are re-mapped to column `1`.
+- **Use Localized Table Scrolling**: Since complex technical tables cannot shrink below their text density, always wrap them in a container styled with `overflow-x: auto; -webkit-overflow-scrolling: touch;` to keep scrollbars local to the table block instead of breaking the entire page.
+

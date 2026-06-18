@@ -1098,6 +1098,10 @@ textarea.form-control {
         padding-bottom: var(--space-md);
     }
     
+    .article-body-wrapper {
+        grid-column: 1;
+    }
+    
     .article-sidebar-right {
         grid-column: 1;
         position: static;
