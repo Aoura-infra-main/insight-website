@@ -755,6 +755,7 @@ a {
     grid-column: 2;
     max-width: var(--article-width);
     margin: 0 auto;
+    width: 100%;
 }
 
 .article-featured-media {
@@ -765,6 +766,7 @@ a {
 
 .article-featured-media img {
     width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
     aspect-ratio: 16/9;
@@ -775,12 +777,18 @@ a {
     font-size: 1.15rem;
     line-height: 1.8;
     color: var(--text-primary);
+    width: 100%;
 }
 
 .article-body-content p {
     font-size: 1.15rem;
     margin-bottom: var(--space-md);
     color: var(--color-gray-900);
+}
+
+.article-body-content img {
+    max-width: 100% !important;
+    height: auto !important;
 }
 
 .article-body-content h2, .article-body-content h3 {
