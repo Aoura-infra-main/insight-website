@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const path = window.location.pathname;
     const pageName = path.split('/').pop() || 'index.html';
 
+    /*
     if (pageName === 'index.html' || pageName === '') {
         renderHomepage();
     } else if (pageName === 'newsroom.html') {
@@ -48,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         'branches.html'
     ].includes(pageName)) {
         renderCategoryPage(pageName);
-    } else if (isArticlePage) {
+    } else */ if (isArticlePage) {
         const articleId = pageName.replace('.html', '');
         const articleMeta = AppState.articles.find(a => a.id === articleId);
         if (articleMeta) {
@@ -283,7 +284,7 @@ function renderNewsroomPage() {
     const newsroomGrid = document.querySelector('.newsroom-grid');
     if (!newsroomGrid) return;
 
-    const filtered = AppState.articles.filter(a => a.category === 'Newsroom');
+    const filtered = AppState.articles;
 
     if (filtered.length === 0) {
         newsroomGrid.innerHTML = `<div style="grid-column: span 3; text-align: center; padding: 4rem 0;"><p class="text-lead">No newsroom releases published yet.</p></div>`;
