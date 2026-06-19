@@ -58,21 +58,21 @@ const LayoutComponents = {
                         <ul class="footer-links">
                             <li><a href="${pathPrefix}newsroom.html" class="footer-link">Newsroom</a></li>
                             <li><a href="${pathPrefix}investments.html" class="footer-link">Investments</a></li>
-                            <li><a href="${pathPrefix}companies.html" class="footer-link">Companies</a></li>
+                            <li><a href="${pathPrefix}company-updates.html" class="footer-link">Company Updates</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="footer-col-title">Publications</h3>
                         <ul class="footer-links">
-                            <li><a href="${pathPrefix}research.html" class="footer-link">Research Intel</a></li>
-                            <li><a href="${pathPrefix}markets.html" class="footer-link">Markets Insights</a></li>
-                            <li><a href="${pathPrefix}reports.html" class="footer-link">Corporate Reports</a></li>
+                            <li><a href="${pathPrefix}product-launches.html" class="footer-link">Product Launches</a></li>
+                            <li><a href="${pathPrefix}partnerships.html" class="footer-link">Partnerships</a></li>
+                            <li><a href="${pathPrefix}investor-relations.html" class="footer-link">Investor Relations</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="footer-col-title">Corporate Portal</h3>
                         <ul class="footer-links">
-                            <li><a href="${pathPrefix}leadership.html" class="footer-link">Leadership Letter</a></li>
+                            <li><a href="${pathPrefix}branches.html" class="footer-link">Branches</a></li>
                             <li><a href="${pathPrefix}about.html" class="footer-link">About Publication</a></li>
                             <li><a href="https://aouragrp.com" target="_blank" rel="noopener" class="footer-link">Aoura Group &rarr;</a></li>
                         </ul>
