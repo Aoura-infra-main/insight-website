@@ -2,24 +2,26 @@
 ================================================================================
 FILE: assets/js/app.js
 ================================================================================
-DEVELOPER DOCUMENTATION:
-LINES 1-30: App State and Configuration initialization. Defines articles source endpoint.
-LINES 31-70: DOMContentLoaded Router. Checks current file path and triggers page-specific render.
-LINES 71-120: Global Search System. Opens overlay, monitors typing, searches titles/tags/excerpts.
-LINES 121-180: Home Page Renderer. Separates featured and latest lists, creates cards.
-LINES 181-220: Category Page Filter. Filters the central registry based on current category.
-LINES 221-340: Dynamic Article Page Renderer. Parses '?article=id', fetches detail JSON, updates progress.
-LINES 341-390: Reading Progress and Scroll-Synchronized Table of Contents (TOC) highlighting.
-LINES 391-440: Related Articles matching utility based on shared tags.
+Developer Notes:
+- Dynamic article fetching from individual JSON files has been removed.
+- Articles are pre-rendered as static HTML pages in `/articles/`.
+- This script loads the articles metadata registry to power search, homepage grids, category listings, and related stories.
 ================================================================================
 */
+
+const isArticlePage = window.location.pathname.includes('/articles/');
+const pathPrefix = isArticlePage ? '../' : '';
 
 // Application State Store
 const AppState = {
     articles: [],
-    registryUrl: './content/articles.json',
-    detailPath: './content/articles/'
+    registryUrl: `${pathPrefix}content/articles.json`
 };
+
+// Helper to resolve correct relative path to an article
+function getArticleLink(id) {
+    return isArticlePage ? `${id}.html` : `articles/${id}.html`;
+}
 
 // Application Init Routing
 document.addEventListener('DOMContentLoaded', async () => {
@@ -35,8 +37,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (pageName === 'index.html' || pageName === '') {
         renderHomepage();
-    } else if (pageName === 'article.html') {
-        renderArticleReader();
     } else if (pageName === 'newsroom.html') {
         renderNewsroomPage();
     } else if ([
@@ -48,6 +48,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         'branches.html'
     ].includes(pageName)) {
         renderCategoryPage(pageName);
+    } else if (isArticlePage) {
+        const articleId = pageName.replace('.html', '');
+        const articleMeta = AppState.articles.find(a => a.id === articleId);
+        if (articleMeta) {
+            buildTableOfContents();
+            initReadingProgressBar();
+            renderRelatedStories(articleMeta);
+            initShareButtons(articleMeta);
+        }
     }
 });
 
@@ -142,7 +151,7 @@ function renderSearchResults(matches) {
         <div class="search-result-item">
             <span class="search-result-category">${match.category}</span>
             <h3 class="search-result-title">
-                <a href="article.html?id=${match.id}">${match.title}</a>
+                <a href="${getArticleLink(match.id)}">${match.title}</a>
             </h3>
             <p class="search-result-excerpt">${match.subtitle}</p>
         </div>
@@ -171,7 +180,7 @@ function renderHomepage() {
                 </div>
                 <div class="story-content">
                     <span class="story-category">${featured[0].category}</span>
-                    <h2 class="story-title"><a href="article.html?id=${featured[0].id}">${featured[0].title}</a></h2>
+                    <h2 class="story-title"><a href="${getArticleLink(featured[0].id)}">${featured[0].title}</a></h2>
                     <p class="story-desc">${featured[0].subtitle}</p>
                     <div class="story-footer">
                         <span class="story-date">${featured[0].date}</span>
@@ -184,7 +193,7 @@ function renderHomepage() {
                     <div class="story-card reveal-element" style="flex: 1;">
                         <div class="story-content">
                             <span class="story-category">${item.category}</span>
-                            <h3 class="story-title"><a href="article.html?id=${item.id}">${item.title}</a></h3>
+                            <h3 class="story-title"><a href="${getArticleLink(item.id)}">${item.title}</a></h3>
                             <p class="story-desc">${item.subtitle}</p>
                             <div class="story-footer">
                                 <span class="story-date">${item.date}</span>
@@ -206,7 +215,7 @@ function renderHomepage() {
                 </div>
                 <div class="story-content">
                     <span class="story-category">${item.category}</span>
-                    <h3 class="story-title"><a href="article.html?id=${item.id}">${item.title}</a></h3>
+                    <h3 class="story-title"><a href="${getArticleLink(item.id)}">${item.title}</a></h3>
                     <p class="story-desc">${item.subtitle}</p>
                     <div class="story-footer">
                         <span class="story-date">${item.date}</span>
@@ -254,7 +263,7 @@ function renderCategoryPage(filename) {
             </div>
             <div class="story-content">
                 <span class="story-category">${item.category}</span>
-                <h3 class="story-title"><a href="article.html?id=${item.id}">${item.title}</a></h3>
+                <h3 class="story-title"><a href="${getArticleLink(item.id)}">${item.title}</a></h3>
                 <p class="story-desc">${item.subtitle}</p>
                 <div class="story-footer">
                     <span class="story-date">${item.date}</span>
@@ -288,7 +297,7 @@ function renderNewsroomPage() {
             </div>
             <div class="story-content">
                 <span class="story-category">${item.category}</span>
-                <h3 class="story-title"><a href="article.html?id=${item.id}">${item.title}</a></h3>
+                <h3 class="story-title"><a href="${getArticleLink(item.id)}">${item.title}</a></h3>
                 <p class="story-desc">${item.subtitle}</p>
                 <div class="story-footer">
                     <span class="story-date">${item.date}</span>
@@ -299,103 +308,6 @@ function renderNewsroomPage() {
     `).join('');
 
     if (window.initScrollAnimations) window.initScrollAnimations();
-}
-
-/**
- * Article Reader layout controller. Fetches the detailed article content JSON.
- */
-async function renderArticleReader() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const articleId = urlParams.get('id');
-
-    if (!articleId) {
-        window.location.href = 'index.html';
-        return;
-    }
-
-    // Match metadata index to build details layout header
-    const articleMeta = AppState.articles.find(a => a.id === articleId);
-    if (!articleMeta) {
-        window.location.href = 'index.html';
-        return;
-    }
-
-    // Update Meta Title in browser
-    document.title = `${articleMeta.title} - Aoura Insights`;
-    
-    // Dynamic SEO optimizations
-    updateSEOHeaders(articleMeta);
-
-    // Fetch Article Body payload
-    try {
-        const response = await fetch(`${AppState.detailPath}${articleId}.json`);
-        if (!response.ok) throw new Error('Article payload not found.');
-        const details = await response.json();
-
-        // Render Page Layout
-        const header = document.querySelector('.article-header');
-        const centralBody = document.querySelector('.article-body-content');
-        const media = document.querySelector('.article-featured-media');
-        const tagsContainer = document.querySelector('.article-tags');
-
-        // Render metadata headers
-        if (header) {
-            const isLaser = articleId === 'aoura-laser-protective-lens-launch';
-            if (isLaser) {
-                header.classList.add('laser-article-header');
-            } else {
-                header.classList.remove('laser-article-header');
-            }
-            header.innerHTML = `
-                <div class="container">
-                    <div class="reading-container">
-                        <span class="article-category-label">${articleMeta.category}</span>
-                        <h1 class="article-title ${isLaser ? 'laser-article-title' : ''}">${articleMeta.title}</h1>
-                        <p class="article-subtitle">${articleMeta.subtitle}</p>
-                        <div class="article-meta-group">
-                            <div class="article-author-info">
-                                <div class="article-author-avatar">${articleMeta.author.charAt(0)}</div>
-                                <span class="article-author-name">${articleMeta.author}</span>
-                            </div>
-                            <span class="text-meta" style="margin-left:auto;">${articleMeta.date} &nbsp;•&nbsp; ${articleMeta.readingTime}</span>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Render cover image
-        if (media && articleMeta.coverImage) {
-            media.innerHTML = `<img src="${articleMeta.coverImage}" alt="${articleMeta.title}">`;
-        }
-
-        // Render rich content body from paragraphs array
-        if (centralBody) {
-            centralBody.innerHTML = details.content;
-            buildTableOfContents();
-        }
-
-        // Render tags
-        if (tagsContainer) {
-            tagsContainer.innerHTML = articleMeta.tags.map(t => `<span class="article-tag">#${t}</span>`).join('');
-        }
-
-        // Initialize progress events
-        initReadingProgressBar();
-
-        // Render related articles
-        renderRelatedStories(articleMeta);
-
-        // Update social sharing link destinations
-        initShareButtons(articleMeta);
-
-    } catch (error) {
-        console.error('Failed to load article detail views:', error);
-        const centralBody = document.querySelector('.article-body-content');
-        if (centralBody) {
-            centralBody.innerHTML = `<p class="text-lead" style="color:red;">Error fetching insight body payload. Check file mapping.</p>`;
-        }
-    }
 }
 
 /**
@@ -491,11 +403,11 @@ function renderRelatedStories(currentMeta) {
     relatedGrid.innerHTML = list.slice(0, 3).map(item => `
         <div class="story-card">
             <div class="story-img-container">
-                <img class="story-img" src="${item.coverImage}" alt="${item.title}">
+                <img class="story-img" src="${pathPrefix}${item.coverImage}" alt="${item.title}">
             </div>
             <div class="story-content">
                 <span class="story-category">${item.category}</span>
-                <h3 class="story-title"><a href="article.html?id=${item.id}">${item.title}</a></h3>
+                <h3 class="story-title"><a href="${getArticleLink(item.id)}">${item.title}</a></h3>
                 <div class="story-footer">
                     <span class="story-date">${item.date}</span>
                 </div>
@@ -576,39 +488,4 @@ function initMobileTocEvents() {
             closeDrawer();
         });
     });
-}
-
-/**
- * Updates SEO meta tags dynamically for search engines and social platforms.
- */
-function updateSEOHeaders(meta) {
-    // Description meta
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-        metaDescription.setAttribute('content', meta.subtitle);
-    }
-
-    // Open Graph tags
-    updateMetaTag('property', 'og:title', meta.title);
-    updateMetaTag('property', 'og:description', meta.subtitle);
-    updateMetaTag('property', 'og:image', window.location.origin + '/' + meta.coverImage);
-    updateMetaTag('property', 'og:url', window.location.href);
-
-    // Twitter card tags
-    updateMetaTag('name', 'twitter:title', meta.title);
-    updateMetaTag('name', 'twitter:description', meta.subtitle);
-    updateMetaTag('name', 'twitter:image', window.location.origin + '/' + meta.coverImage);
-}
-
-/**
- * Helper utility to create or update a specific meta tag.
- */
-function updateMetaTag(attribute, value, content) {
-    let tag = document.querySelector(`meta[${attribute}="${value}"]`);
-    if (!tag) {
-        tag = document.createElement('meta');
-        tag.setAttribute(attribute, value);
-        document.head.appendChild(tag);
-    }
-    tag.setAttribute('content', content);
 }

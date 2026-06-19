@@ -1407,3 +1407,42 @@ textarea.form-control {
         display: none !important;
     }
 }
+
+/* --- Responsive Safety for Article Content --- */
+.article-content img,
+.article-body-content img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--border-color);
+    margin: var(--space-md) 0;
+    border-radius: 4px;
+}
+
+.table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+    min-width: 500px;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-wrapper th {
+    background-color: var(--bg-secondary);
+    font-weight: 700;
+}
+
+.table-wrapper td:not(:last-child),
+.table-wrapper th:not(:last-child) {
+    border-right: 1px solid var(--border-color);
+}

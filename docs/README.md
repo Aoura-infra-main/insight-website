@@ -40,10 +40,10 @@ Aoura Insights is built using zero-dependency HTML, CSS, and Vanilla JavaScript,
 
 ## 2. Git Publishing Workflow (Adding Articles)
 
-Because this is a static site, adding a new article requires updating the central registry file and creating a corresponding article JSON file.
+Because this is a static site, adding a new article requires updating the central registry file and creating a corresponding static HTML file.
 
 ### Step 1: Update the Article Registry
-Open [articles.json](file:///Users/aravindsaj/Library/CloudStorage/GoogleDrive-ask5615@g.rit.edu/My%20Drive/DeskEssentials/Systems/Antigravity/Insight%20Website/content/articles.json) and append a metadata object to the array:
+Open [articles.json](file:///Users/aravindsaj/Library/CloudStorage/GoogleDrive-ask5615@g.rit.edu/My%20Drive/DeskEssentials/Systems/Insight%20Website/content/articles.json) and append a metadata object to the array:
 ```json
 {
     "id": "expansion-into-germany",
@@ -53,23 +53,18 @@ Open [articles.json](file:///Users/aravindsaj/Library/CloudStorage/GoogleDrive-a
     "author": "Human Resources Team",
     "date": "June 14, 2026",
     "readingTime": "3 MIN READ",
-    "coverImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
+    "coverImage": "assets/images/berlin-office.png",
     "tags": ["Europe", "Expansion", "Engineering"],
     "featured": false
 }
 ```
 
-### Step 2: Create the Detailed Content File
-Create a corresponding JSON file inside [content/articles/](file:///Users/aravindsaj/Library/CloudStorage/GoogleDrive-ask5615@g.rit.edu/My%20Drive/DeskEssentials/Systems/Antigravity/Insight%20Website/content/articles/) named after the `id` field (e.g., `expansion-into-germany.json`):
-```json
-{
-    "content": "<h2>Berlin Launch</h2><p>Aoura Group is excited to open its new engineering center in Berlin...</p>"
-}
-```
+### Step 2: Create the Static HTML File
+Create a corresponding HTML file inside [articles/](file:///Users/aravindsaj/Library/CloudStorage/GoogleDrive-ask5615@g.rit.edu/My%20Drive/DeskEssentials/Systems/Insight%20Website/articles/) named after the `id` field (e.g., `expansion-into-germany.html`). Refer to [documentation.md](file:///Users/aravindsaj/Library/CloudStorage/GoogleDrive-ask5615@g.rit.edu/My%20Drive/DeskEssentials/Systems/Insight%20Website/documentation.md) for the standard HTML article page template structure.
 
 ### Step 3: Push Changes
 ```bash
-git add content/articles.json content/articles/expansion-into-germany.json
+git add content/articles.json articles/expansion-into-germany.html
 git commit -m "Publish Berlin expansion bulletin"
 git push origin main
 ```

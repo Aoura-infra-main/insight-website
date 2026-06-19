@@ -5,22 +5,24 @@
 
 const LayoutComponents = {
     getHeaderHTML() {
+        const isArticlePage = window.location.pathname.includes('/articles/');
+        const pathPrefix = isArticlePage ? '../' : '';
         return `
         <nav class="navbar" id="main-nav">
             <div class="container">
-                <a href="index.html" class="brand" aria-label="Aoura Insights Home">
-                    <img class="brand-img" src="assets/logo/logo.jpg" alt="Aoura Insights Logo">
+                <a href="${pathPrefix}index.html" class="brand" aria-label="Aoura Insights Home">
+                    <img class="brand-img" src="${pathPrefix}assets/logo/logo.jpg" alt="Aoura Insights Logo">
                 </a>
                 <ul class="nav-menu" id="navbar-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="investments.html" class="nav-link">Investments</a></li>
-                    <li><a href="investor-relations.html" class="nav-link">Investor Relations</a></li>
-                    <li><a href="product-launches.html" class="nav-link">Product Launches</a></li>
-                    <li><a href="company-updates.html" class="nav-link">Company Updates</a></li>
-                    <li><a href="partnerships.html" class="nav-link">Partnerships</a></li>
-                    <li><a href="branches.html" class="nav-link">Branches</a></li>
-                    <li><a href="newsroom.html" class="nav-link">Newsroom</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="${pathPrefix}index.html" class="nav-link">Home</a></li>
+                    <li><a href="${pathPrefix}investments.html" class="nav-link">Investments</a></li>
+                    <li><a href="${pathPrefix}investor-relations.html" class="nav-link">Investor Relations</a></li>
+                    <li><a href="${pathPrefix}product-launches.html" class="nav-link">Product Launches</a></li>
+                    <li><a href="${pathPrefix}company-updates.html" class="nav-link">Company Updates</a></li>
+                    <li><a href="${pathPrefix}partnerships.html" class="nav-link">Partnerships</a></li>
+                    <li><a href="${pathPrefix}branches.html" class="nav-link">Branches</a></li>
+                    <li><a href="${pathPrefix}newsroom.html" class="nav-link">Newsroom</a></li>
+                    <li><a href="${pathPrefix}about.html" class="nav-link">About</a></li>
                     <li>
                         <button class="search-trigger" id="open-search-btn" aria-label="Open Search">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -41,35 +43,37 @@ const LayoutComponents = {
     },
 
     getFooterHTML() {
+        const isArticlePage = window.location.pathname.includes('/articles/');
+        const pathPrefix = isArticlePage ? '../' : '';
         return `
         <footer class="footer" id="main-footer">
             <div class="container">
                 <div class="footer-top">
                     <div>
-                        <img class="brand-img" src="assets/logo/logo.jpg" alt="Aoura Group Logo" style="filter: invert(1); height: 57px; max-height: 57px; object-fit: contain;">
+                        <img class="brand-img" src="${pathPrefix}assets/logo/logo.jpg" alt="Aoura Group Logo" style="filter: invert(1); height: 57px; max-height: 57px; object-fit: contain;">
                         <p class="footer-brand-desc">Aoura Group builds distribution infrastructure, supply networks, and e-commerce solutions for businesses across the UAE.</p>
                     </div>
                     <div>
                         <h3 class="footer-col-title">Main Sections</h3>
                         <ul class="footer-links">
-                            <li><a href="newsroom.html" class="footer-link">Newsroom</a></li>
-                            <li><a href="investments.html" class="footer-link">Investments</a></li>
-                            <li><a href="companies.html" class="footer-link">Companies</a></li>
+                            <li><a href="${pathPrefix}newsroom.html" class="footer-link">Newsroom</a></li>
+                            <li><a href="${pathPrefix}investments.html" class="footer-link">Investments</a></li>
+                            <li><a href="${pathPrefix}companies.html" class="footer-link">Companies</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="footer-col-title">Publications</h3>
                         <ul class="footer-links">
-                            <li><a href="research.html" class="footer-link">Research Intel</a></li>
-                            <li><a href="markets.html" class="footer-link">Markets Insights</a></li>
-                            <li><a href="reports.html" class="footer-link">Corporate Reports</a></li>
+                            <li><a href="${pathPrefix}research.html" class="footer-link">Research Intel</a></li>
+                            <li><a href="${pathPrefix}markets.html" class="footer-link">Markets Insights</a></li>
+                            <li><a href="${pathPrefix}reports.html" class="footer-link">Corporate Reports</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="footer-col-title">Corporate Portal</h3>
                         <ul class="footer-links">
-                            <li><a href="leadership.html" class="footer-link">Leadership Letter</a></li>
-                            <li><a href="about.html" class="footer-link">About Publication</a></li>
+                            <li><a href="${pathPrefix}leadership.html" class="footer-link">Leadership Letter</a></li>
+                            <li><a href="${pathPrefix}about.html" class="footer-link">About Publication</a></li>
                             <li><a href="https://aouragrp.com" target="_blank" rel="noopener" class="footer-link">Aoura Group &rarr;</a></li>
                         </ul>
                     </div>
