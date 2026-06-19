@@ -145,20 +145,22 @@ Use the standard structure template below:
 
 ---
 
-## 5. Responsive Layout & Media Safety Rules
+## 5. Article Mobile Responsive Rules
 
-To prevent horizontal scrolling and layout breakage on mobile viewports (320px to 412px):
+To prevent horizontal scrolling and layout breakage on mobile viewports (320px to 412px), publishers and developers must adhere to these safety rules:
 
-1. **Images**: All content images must have `max-width: 100%`, `height: auto`, and include `loading="lazy"` to optimize bandwidth.
-   ```html
-   <img src="../assets/images/image.png" alt="Description" loading="lazy">
-   ```
-2. **Tables**: Wrap all tables in a `<div class="table-wrapper">` element. The CSS applies an `overflow-x: auto` style to make table scrolling responsive.
-   ```html
-   <div class="table-wrapper">
-       <table>...</table>
-   </div>
-   ```
+- **Article Containers**: All article layouts (`.article-layout`, `.article-body-wrapper`, `.article-body-content`) must not exceed the viewport width. Use `max-width: 100%`, `width: 100%`, and `box-sizing: border-box`.
+- **Images**: Every image inside an article must use responsive scaling. Never use fixed pixel widths on image tags. The CSS enforces `max-width: 100% !important` and `height: auto !important` to ensure they scale dynamically with the screen size. Always add `loading="lazy"` to optimize page load speeds.
+  ```html
+  <img src="../assets/images/image.png" alt="Description" loading="lazy">
+  ```
+- **No Fixed Widths**: Never use inline `width="..."` styles with pixel values on paragraphs, divs, headings, or lists, as these force containers wider than mobile viewports.
+- **Tables**: Wrap all tabular datasets in a `<div class="table-wrapper">` element. The table wrapper limits the table width and enables a clean horizontal scroll only inside the table boundary, preventing the parent page from stretching.
+  ```html
+  <div class="table-wrapper">
+      <table>...</table>
+  </div>
+  ```
 
 ---
 

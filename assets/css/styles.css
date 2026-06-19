@@ -1409,10 +1409,55 @@ textarea.form-control {
 }
 
 /* --- Responsive Safety for Article Content --- */
+.article-content,
+.article-container,
+.article,
+.article-body-wrapper,
+.article-body-content,
+.article-image-container {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .article-content img,
-.article-body-content img {
+.article img,
+.article-featured-image img,
+.article-featured-media img,
+.article-body-content img,
+.article-image-container img {
     max-width: 100% !important;
+    width: auto !important;
     height: auto !important;
+    display: block;
+    margin: 1.5rem auto;
+}
+
+@media (max-width: 768px) {
+    .article-layout {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+        display: block; /* Override grid on mobile to prevent overflow columns */
+    }
+
+    .article-body-wrapper {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .article-body-content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
 }
 
 .table-wrapper {
