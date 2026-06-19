@@ -1491,3 +1491,20 @@ textarea.form-control {
 .table-wrapper th:not(:last-child) {
     border-right: 1px solid var(--border-color);
 }
+
+/* --- Static Table of Contents Styling --- */
+.article-toc,
+.article-sidebar-left {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.article-toc ul,
+.article-toc-list {
+    padding-left: 20px;
+}
+
+.article-toc a,
+.article-toc-link {
+    word-break: break-word;
+}

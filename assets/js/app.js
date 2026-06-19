@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const articleId = pageName.replace('.html', '');
         const articleMeta = AppState.articles.find(a => a.id === articleId);
         if (articleMeta) {
-            buildTableOfContents();
+            initMobileTocEvents();
             initReadingProgressBar();
             renderRelatedStories(articleMeta);
             initShareButtons(articleMeta);
@@ -310,46 +310,7 @@ function renderNewsroomPage() {
     if (window.initScrollAnimations) window.initScrollAnimations();
 }
 
-/**
- * Builds Table of Contents list items on the fly based on H2 headlines inside content.
- */
-function buildTableOfContents() {
-    const tocList = document.querySelector('.article-toc-list');
-    const mobileTocList = document.getElementById('mobile-toc-list-ul');
-    const bodyHeadings = document.querySelectorAll('.article-body-content h2');
 
-    if (bodyHeadings.length === 0) {
-        const leftSidebar = document.querySelector('.article-sidebar-left');
-        if (leftSidebar) leftSidebar.style.display = 'none';
-        const mobileToggle = document.getElementById('toc-mobile-btn');
-        if (mobileToggle) mobileToggle.style.display = 'none';
-        return;
-    }
-
-    // Assign anchor IDs to all headings
-    bodyHeadings.forEach((heading, index) => {
-        if (!heading.getAttribute('id')) {
-            heading.setAttribute('id', `section-${index}`);
-        }
-    });
-
-    if (tocList) {
-        tocList.innerHTML = Array.from(bodyHeadings).map(heading => {
-            const anchorId = heading.getAttribute('id');
-            return `<li><a class="article-toc-link" href="#${anchorId}">${heading.textContent}</a></li>`;
-        }).join('');
-    }
-
-    if (mobileTocList) {
-        mobileTocList.innerHTML = Array.from(bodyHeadings).map(heading => {
-            const anchorId = heading.getAttribute('id');
-            return `<li><a href="#${anchorId}">${heading.textContent}</a></li>`;
-        }).join('');
-    }
-
-    // Initialize Mobile TOC Interactions
-    initMobileTocEvents();
-}
 
 /**
  * Scroll reading tracking and table of contents active-class tracking observer.
