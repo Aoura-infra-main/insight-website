@@ -8,67 +8,97 @@
     "date": "June 23, 2026",
     "readingTime": "4 MIN READ",
     "coverImage": "assets/images/aoura-technologies-logo.jpg",
-    "tags": ["Acquisition", "Technology", "Software Development", "Aoura Group"],
+    "tags": [
+      "Acquisition",
+      "Technology",
+      "Software Development",
+      "Aoura Group"
+    ],
     "featured": true
   },
   {
     "id": "sell-on-amazon-uae-working-full-time",
-    "category": "Company Updates",
+    "category": "Newsroom",
     "title": "How to Sell on Amazon UAE While Working Full Time: The Complete Guide",
     "subtitle": "A step-by-step roadmap for corporate professionals to build a profitable Amazon FBA side business in the UAE without sacrificing their primary income.",
     "author": "Aoura E-commerce Services",
     "date": "June 23, 2026",
     "readingTime": "9 MIN READ",
     "coverImage": "assets/images/sell-on-amazon-uae-working-full-time.png",
-    "tags": ["E-commerce", "Amazon UAE", "Side Business", "Seller Services"],
+    "tags": [
+      "E-commerce",
+      "Amazon UAE",
+      "Side Business",
+      "Seller Services"
+    ],
     "featured": true
   },
   {
     "id": "aoura-ecommerce-service-amazon-selling-experts",
-    "category": "Company Updates",
+    "category": "Newsroom",
     "title": "Aoura E-Commerce Service: The Complete Guide to Selling on Amazon & Noon UAE",
     "subtitle": "How Dubai's premier e-commerce agency provides end-to-end account management, verified sourcing, product photography, and high-ROAS advertising to scale online brands.",
     "author": "Aoura E-commerce Services",
     "date": "June 22, 2026",
     "readingTime": "9 MIN READ",
     "coverImage": "assets/images/aoura-ecommerce-services.png",
-    "tags": ["E-commerce", "Amazon UAE", "Noon UAE", "Seller Services"],
+    "tags": [
+      "E-commerce",
+      "Amazon UAE",
+      "Noon UAE",
+      "Seller Services"
+    ],
     "featured": true
   },
   {
     "id": "find-winning-product-amazon-uae",
-    "category": "Company Updates",
+    "category": "Newsroom",
     "title": "How to Find a Winning Product on Amazon UAE: The Aoura Process",
     "subtitle": "The exact 5-step data-driven validation process to identify high-margin, high-demand products and avoid costly launching mistakes in the UAE e-commerce market.",
     "author": "Aoura E-commerce Services",
     "date": "June 21, 2026",
     "readingTime": "8 MIN READ",
     "coverImage": "assets/images/find-winning-product-amazon-uae.jpg",
-    "tags": ["E-commerce", "Amazon UAE", "Product Research", "Market Strategy"],
+    "tags": [
+      "E-commerce",
+      "Amazon UAE",
+      "Product Research",
+      "Market Strategy"
+    ],
     "featured": true
   },
   {
     "id": "amazon-vs-noon-uae",
-    "category": "Company Updates",
+    "category": "Newsroom",
     "title": "Amazon vs Noon UAE: The Ultimate E-commerce Seller Comparison",
     "subtitle": "An in-depth analysis of audience demographics, commission structures, logistics pathways, and seller support on the UAE's two dominant retail marketplaces.",
     "author": "Aoura E-commerce Services",
     "date": "June 20, 2026",
     "readingTime": "5 MIN READ",
     "coverImage": "assets/images/amazon-vs-noon-uae.jpg",
-    "tags": ["E-commerce", "Amazon UAE", "Noon UAE", "Marketplace Comparison"],
+    "tags": [
+      "E-commerce",
+      "Amazon UAE",
+      "Noon UAE",
+      "Marketplace Comparison"
+    ],
     "featured": true
   },
   {
     "id": "aoura-laser-protective-lens-launch",
     "category": "Product Launches",
     "title": "Aoura Products Launches High-Precision Laser Protective Lenses for Handheld Fiber Laser Welders",
-    "subtitle": "Expanding B2B industrial consumables catalog with premium 1064nm protective window lenses optimized for the UAE’s manufacturing sector.",
+    "subtitle": "Expanding B2B industrial consumables catalog with premium 1064nm protective window lenses optimized for the UAE\u2019s manufacturing sector.",
     "author": "Aoura Products Press Office",
     "date": "June 15, 2026",
     "readingTime": "4 MIN READ",
     "coverImage": "assets/images/laser-lenses.png",
-    "tags": ["Laser Accessories", "Product Launch", "Industrial Supply", "UAE"],
+    "tags": [
+      "Laser Accessories",
+      "Product Launch",
+      "Industrial Supply",
+      "UAE"
+    ],
     "featured": true
   },
   {
@@ -80,7 +110,12 @@
     "date": "July 10, 2026",
     "readingTime": "2 MIN READ",
     "coverImage": "assets/images/masuma-washer-fluid.jpg",
-    "tags": ["Automotive Consumables", "Product Launch", "Car Care", "UAE"],
+    "tags": [
+      "Automotive Consumables",
+      "Product Launch",
+      "Car Care",
+      "UAE"
+    ],
     "featured": true
   },
   {
@@ -92,7 +127,13 @@
     "date": "July 10, 2026",
     "readingTime": "3 MIN READ",
     "coverImage": "assets/images/aoura-store-logo.jpg",
-    "tags": ["Aoura Store", "Aoura Technology", "E-Commerce", "B2B", "Aoura Products"],
+    "tags": [
+      "Aoura Store",
+      "Aoura Technology",
+      "E-Commerce",
+      "B2B",
+      "Aoura Products"
+    ],
     "featured": true
   }
 ]
