@@ -52,11 +52,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     } else */ if (isArticlePage) {
         const articleId = pageName.replace('.html', '');
         const articleMeta = AppState.articles.find(a => a.id === articleId);
+        
+        initMobileTocEvents();
+        initReadingProgressBar();
+        initShareButtons(articleMeta);
+
         if (articleMeta) {
-            initMobileTocEvents();
-            initReadingProgressBar();
             renderRelatedStories(articleMeta);
-            initShareButtons(articleMeta);
         }
     }
 });
@@ -387,7 +389,8 @@ function initShareButtons(meta) {
     const shareCopy = document.getElementById('share-copy');
 
     const articleUrl = encodeURIComponent(window.location.href);
-    const titleText = encodeURIComponent(meta.title);
+    const rawTitle = meta ? meta.title : document.title;
+    const titleText = encodeURIComponent(rawTitle);
 
     if (shareTwitter) {
         shareTwitter.addEventListener('click', () => {

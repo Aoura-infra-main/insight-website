@@ -70,5 +70,17 @@
     "coverImage": "assets/images/laser-lenses.png",
     "tags": ["Laser Accessories", "Product Launch", "Industrial Supply", "UAE"],
     "featured": true
+  },
+  {
+    "id": "masuma-windshield-washer-fluid-launch",
+    "category": "Product Launches",
+    "title": "Aoura Products Launches MASUMA MOX-130 Japanese Windshield Washer Fluid",
+    "subtitle": "Expanding the automotive consumables catalog with a premium 1:100 dilution windshield washer formula designed for maximum visibility and value.",
+    "author": "Aoura Products Press Office",
+    "date": "July 10, 2026",
+    "readingTime": "2 MIN READ",
+    "coverImage": "assets/images/masuma-washer-fluid.jpg",
+    "tags": ["Automotive Consumables", "Product Launch", "Car Care", "UAE"],
+    "featured": true
   }
 ]
