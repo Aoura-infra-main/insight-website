@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /article.html?id=*
+
+Sitemap: https://aouragrp.com/sitemap.xml
+Sitemap: https://aouragrp.com/sitemap-news.xml

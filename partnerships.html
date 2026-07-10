@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!--
 ================================================================================
 FILE: partnerships.html
@@ -14,95 +15,120 @@ LINES 156-180: Search System Overlay markup and main JS inclusion.
 -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partnerships - Aoura Insights</title>
-    <meta name="description" content="Strategic alliances, suppliers, customer relationships, and sustainability collaborations of Aoura Group.">
-    <link rel="icon" type="image/png" href="assets/logo/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://aouragrp.com/partnerships.html">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Partnerships - Aoura Insights</title>
+<meta content="Strategic alliances, suppliers, customer relationships, and sustainability collaborations of Aoura Group." name="description"/>
+<link href="assets/logo/favicon.png" rel="icon" type="image/png"/>
+<link as="style" href="assets/css/styles.css" rel="preload"/>\n    <link href="assets/css/styles.css" rel="stylesheet"/>
+<!-- Canonical URL -->
+<link href="https://aouragrp.com/partnerships.html" rel="canonical"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://aouragrp.com/partnerships.html" property="og:url"/>
+<meta content="Partnerships - Aoura Insights" property="og:title"/>
+<meta content="Strategic alliances, suppliers, customer relationships, and sustainability collaborations of Aoura Group." property="og:description"/>
+<meta content="https://aouragrp.com/assets/logo/logo.jpg" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Partnerships - Aoura Insights" name="twitter:title"/>
+<meta content="Strategic alliances, suppliers, customer relationships, and sustainability collaborations of Aoura Group." name="twitter:description"/>
+<meta content="https://aouragrp.com/assets/logo/logo.jpg" name="twitter:image"/>
+<!-- JSON-LD Structured Data Schema -->
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aouragrp.com/partnerships.html">
-    <meta property="og:title" content="Partnerships - Aoura Insights">
-    <meta property="og:description" content="Strategic alliances, suppliers, customer relationships, and sustainability collaborations of Aoura Group.">
-    <meta property="og:image" content="https://aouragrp.com/assets/logo/logo.jpg">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Partnerships - Aoura Insights">
-    <meta name="twitter:description" content="Strategic alliances, suppliers, customer relationships, and sustainability collaborations of Aoura Group.">
-    <meta name="twitter:image" content="https://aouragrp.com/assets/logo/logo.jpg">
-
-    <!-- JSON-LD Structured Data Schema -->
-    <script type="application/ld+json">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Partnerships - Aoura Insights",
+  "description": "Strategic alliances, suppliers, customer relationships, and sustainability collaborations of Aoura Group.",
+  "url": "https://aouragrp.com/partnerships.html",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": []
+  }
+}</script>\n<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
     {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "url": "https://aouragrp.com/partnerships.html",
-      "name": "Partnerships - Aoura Insights",
-      "description": "Strategic alliances, suppliers, customer relationships, and sustainability collaborations of Aoura Group."
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://aouragrp.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Partnerships",
+      "item": "https://aouragrp.com/partnerships.html"
     }
-    </script>
-</head>
+  ]
+}</script>\n</head>
 <body>
-
-    <!-- Floating Sticky Navbar Placeholder -->
-    <div id="global-header"></div>
-
-    <!-- Channel Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <span class="text-meta hero-meta">CHANNEL</span>
-            <h1 class="hero-title">Partnerships</h1>
-            <p class="text-lead hero-desc">Strategic alliances, joint research operations, supplier agreements, and global sustainability networks built alongside global leaders like Tesla.</p>
-        </div>
-    </header>
-
-    <!-- Dynamic Category Grid -->
-    <section class="section-featured" style="padding-top: var(--space-xl);">
-        <div class="container">
-            <div class="latest-grid category-grid">
-                <!-- Dynamically Rendered via assets/js/app.js -->
-                <div class="story-card reveal-element">
-                    <div class="story-img-container">
-                        <img class="story-img" src="assets/images/aoura-technologies-logo.jpg" alt="Aoura Group Acquires Alphalake Technologies">
-                    </div>
-                    <div class="story-content">
-                        <span class="story-category">Investments</span>
-                        <h3 class="story-title"><a href="articles/aoura-group-acquires-alphalake-technologies.html">Aoura Group Acquires Alphalake Technologies</a></h3>
-                        <p class="story-desc">Strategic acquisition strengthens Aoura Group's technology capabilities and accelerates software development initiatives across the organization.</p>
-                        <div class="story-footer">
-                            <span class="story-date">June 23, 2026</span>
-                            <span class="story-readtime">4 MIN READ</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Area Placeholder -->
-    <div id="global-footer"></div>
-
-    <!-- Interactive Client-side Search Overlay -->
-    <div class="search-overlay" aria-hidden="true">
-        <div class="search-container">
-            <div class="search-header">
-                <input type="text" class="search-input" placeholder="Type key terms to search news..." aria-label="Search articles">
-                <button class="search-close" aria-label="Close Search">&times;</button>
-            </div>
-            <div class="search-results">
-                <!-- Filled dynamically in app.js -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/layout.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/app.js"></script>
-</body>
+<!-- Floating Sticky Navbar Placeholder -->
+<div id="global-header"></div>
+<!-- Channel Hero Section -->
+<header class="hero">
+<div class="container">
+<span class="text-meta hero-meta">CHANNEL</span>
+<h1 class="hero-title">Partnerships</h1>
+<p class="text-lead hero-desc">Strategic alliances, joint research operations, supplier agreements, and global sustainability networks built alongside global leaders like Tesla.</p>
+</div>
+</header>
+<!-- Dynamic Category Grid -->
+<section class="section-featured" style="padding-top: var(--space-xl);">
+<div class="container">
+<div class="latest-grid category-grid">
+<!-- Dynamically Rendered via assets/js/app.js -->
+<div class="story-card reveal-element">
+<div class="story-img-container">
+<img alt="Aoura Group Acquires Alphalake Technologies" class="story-img" height="450" src="assets/images/aoura-technologies-logo.jpg" width="800"/>
+</div>
+<div class="story-content">
+<span class="story-category">Investments</span>
+<h3 class="story-title"><a href="articles/aoura-group-acquires-alphalake-technologies.html">Aoura Group Acquires Alphalake Technologies</a></h3>
+<p class="story-desc">Strategic acquisition strengthens Aoura Group's technology capabilities and accelerates software development initiatives across the organization.</p>
+<div class="story-footer">
+<span class="story-date">June 23, 2026</span>
+<span class="story-readtime">4 MIN READ</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Area Placeholder -->
+<div id="global-footer"></div>
+<!-- Interactive Client-side Search Overlay -->
+<div aria-hidden="true" class="search-overlay">
+<div class="search-container">
+<div class="search-header">
+<input aria-label="Search articles" class="search-input" placeholder="Type key terms to search news..." type="text"/>
+<button aria-label="Close Search" class="search-close">×</button>
+</div>
+<div class="search-results">
+<!-- Filled dynamically in app.js -->
+</div>
+</div>
+</div>
+<!-- Scripts -->
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/app.js"></script>
+<noscript>
+<div style="background:#000; color:#fff; padding:20px;">
+<h2>Aoura Insights Navigation</h2>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="newsroom.html">Newsroom</a></li>
+<li><a href="investments.html">Investments</a></li>
+<li><a href="product-launches.html">Product Launches</a></li>
+<li><a href="company-updates.html">Company Updates</a></li>
+<li><a href="partnerships.html">Partnerships</a></li>
+<li><a href="investor-relations.html">Investor Relations</a></li>
+<li><a href="branches.html">Branches</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+</div>
+</noscript></body>
 </html>

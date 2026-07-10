@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!--
 ================================================================================
 FILE: newsroom.html
@@ -14,140 +15,193 @@ LINES 156-180: Search System Overlay markup and main JS inclusion.
 -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newsroom - Aoura Insights</title>
-    <meta name="description" content="The official archive feed of all announcements, publications, launches, and insights from Aoura Group.">
-    <link rel="icon" type="image/png" href="assets/logo/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://aouragrp.com/newsroom.html">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Newsroom - Aoura Insights</title>
+<meta content="The official archive feed of all announcements, publications, launches, and insights from Aoura Group." name="description"/>
+<link href="assets/logo/favicon.png" rel="icon" type="image/png"/>
+<link as="style" href="assets/css/styles.css" rel="preload"/>\n    <link href="assets/css/styles.css" rel="stylesheet"/>
+<!-- Canonical URL -->
+<link href="https://aouragrp.com/newsroom.html" rel="canonical"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://aouragrp.com/newsroom.html" property="og:url"/>
+<meta content="Newsroom - Aoura Insights" property="og:title"/>
+<meta content="The official archive feed of all announcements, publications, launches, and insights from Aoura Group." property="og:description"/>
+<meta content="https://aouragrp.com/assets/logo/logo.jpg" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Newsroom - Aoura Insights" name="twitter:title"/>
+<meta content="The official archive feed of all announcements, publications, launches, and insights from Aoura Group." name="twitter:description"/>
+<meta content="https://aouragrp.com/assets/logo/logo.jpg" name="twitter:image"/>
+<!-- JSON-LD Structured Data Schema -->
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aouragrp.com/newsroom.html">
-    <meta property="og:title" content="Newsroom - Aoura Insights">
-    <meta property="og:description" content="The official archive feed of all announcements, publications, launches, and insights from Aoura Group.">
-    <meta property="og:image" content="https://aouragrp.com/assets/logo/logo.jpg">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Newsroom - Aoura Insights">
-    <meta name="twitter:description" content="The official archive feed of all announcements, publications, launches, and insights from Aoura Group.">
-    <meta name="twitter:image" content="https://aouragrp.com/assets/logo/logo.jpg">
-
-    <!-- JSON-LD Structured Data Schema -->
-    <script type="application/ld+json">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Newsroom - Aoura Insights",
+  "description": "The official archive feed of all announcements, publications, launches, and insights from Aoura Group.",
+  "url": "https://aouragrp.com/newsroom.html",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "url": "https://aouragrp.com/articles/aoura-group-acquires-alphalake-technologies.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "url": "https://aouragrp.com/articles/sell-on-amazon-uae-working-full-time.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "url": "https://aouragrp.com/articles/aoura-ecommerce-service-amazon-selling-experts.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "url": "https://aouragrp.com/articles/find-winning-product-amazon-uae.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "url": "https://aouragrp.com/articles/amazon-vs-noon-uae.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "url": "https://aouragrp.com/articles/aoura-laser-protective-lens-launch.html"
+      }
+    ]
+  }
+}</script>\n<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
     {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "url": "https://aouragrp.com/newsroom.html",
-      "name": "Newsroom - Aoura Insights",
-      "description": "The official archive feed of all announcements, publications, launches, and insights from Aoura Group."
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://aouragrp.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Newsroom",
+      "item": "https://aouragrp.com/newsroom.html"
     }
-    </script>
-</head>
+  ]
+}</script>\n</head>
 <body>
-
-    <!-- Floating Sticky Navbar Placeholder -->
-    <div id="global-header"></div>
-
-    <!-- Channel Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <span class="text-meta hero-meta">ARCHIVES</span>
-            <h1 class="hero-title">Aoura Newsroom</h1>
-            <p class="text-lead hero-desc">A complete chronological log of all press bulletins, acquisitions, financial results, and partner alliances released by Aoura Group corporate relations.</p>
-        </div>
-    </header>
-
-    <!-- Dynamic Category Grid -->
-    <section class="section-featured" style="padding-top: var(--space-xl);">
-        <div class="container">
-            <div class="latest-grid newsroom-grid">
-                <!-- Manually Rendered Cards -->
-                <div class="story-card reveal-element">
-                    <div class="story-img-container">
-                        <img class="story-img" src="assets/images/sell-on-amazon-uae-working-full-time.png" alt="How to Sell on Amazon UAE While Working Full Time">
-                    </div>
-                    <div class="story-content">
-                        <span class="story-category">Company Updates</span>
-                        <h3 class="story-title"><a href="articles/sell-on-amazon-uae-working-full-time.html">How to Sell on Amazon UAE While Working Full Time: The Complete Guide</a></h3>
-                        <p class="story-desc">A step-by-step roadmap for corporate professionals to build a profitable Amazon FBA side business in the UAE without sacrificing their primary income.</p>
-                        <div class="story-footer">
-                            <span class="story-date">June 23, 2026</span>
-                            <span class="story-readtime">9 MIN READ</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="story-card reveal-element">
-                    <div class="story-img-container">
-                        <img class="story-img" src="assets/images/aoura-ecommerce-services.png" alt="Aoura E-Commerce Service">
-                    </div>
-                    <div class="story-content">
-                        <span class="story-category">Company Updates</span>
-                        <h3 class="story-title"><a href="articles/aoura-ecommerce-service-amazon-selling-experts.html">Aoura E-Commerce Service: The Complete Guide to Selling on Amazon & Noon UAE</a></h3>
-                        <p class="story-desc">How Dubai's premier e-commerce agency provides end-to-end account management, verified sourcing, product photography, and high-ROAS advertising to scale online brands.</p>
-                        <div class="story-footer">
-                            <span class="story-date">June 22, 2026</span>
-                            <span class="story-readtime">9 MIN READ</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="story-card reveal-element">
-                    <div class="story-img-container">
-                        <img class="story-img" src="assets/images/find-winning-product-amazon-uae.jpg" alt="How to Find a Winning Product on Amazon UAE">
-                    </div>
-                    <div class="story-content">
-                        <span class="story-category">Company Updates</span>
-                        <h3 class="story-title"><a href="articles/find-winning-product-amazon-uae.html">How to Find a Winning Product on Amazon UAE: The Aoura Process</a></h3>
-                        <p class="story-desc">The exact 5-step data-driven validation process to identify high-margin, high-demand products and avoid costly launching mistakes in the UAE e-commerce market.</p>
-                        <div class="story-footer">
-                            <span class="story-date">June 21, 2026</span>
-                            <span class="story-readtime">8 MIN READ</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="story-card reveal-element">
-                    <div class="story-img-container">
-                        <img class="story-img" src="assets/images/amazon-vs-noon-uae.jpg" alt="Amazon vs Noon UAE">
-                    </div>
-                    <div class="story-content">
-                        <span class="story-category">Company Updates</span>
-                        <h3 class="story-title"><a href="articles/amazon-vs-noon-uae.html">Amazon vs Noon UAE: The Ultimate E-commerce Seller Comparison</a></h3>
-                        <p class="story-desc">Analyzing audience reach, referral commissions, FBA vs FBN fulfilment, and backend merchant interfaces for brands operating in the Middle East.</p>
-                        <div class="story-footer">
-                            <span class="story-date">June 20, 2026</span>
-                            <span class="story-readtime">5 MIN READ</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Area Placeholder -->
-    <div id="global-footer"></div>
-
-    <!-- Interactive Client-side Search Overlay -->
-    <div class="search-overlay" aria-hidden="true">
-        <div class="search-container">
-            <div class="search-header">
-                <input type="text" class="search-input" placeholder="Type key terms to search news..." aria-label="Search articles">
-                <button class="search-close" aria-label="Close Search">&times;</button>
-            </div>
-            <div class="search-results">
-                <!-- Filled dynamically in app.js -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/layout.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/app.js"></script>
-</body>
+<!-- Floating Sticky Navbar Placeholder -->
+<div id="global-header"></div>
+<!-- Channel Hero Section -->
+<header class="hero">
+<div class="container">
+<span class="text-meta hero-meta">ARCHIVES</span>
+<h1 class="hero-title">Aoura Newsroom</h1>
+<p class="text-lead hero-desc">A complete chronological log of all press bulletins, acquisitions, financial results, and partner alliances released by Aoura Group corporate relations.</p>
+</div>
+</header>
+<!-- Dynamic Category Grid -->
+<section class="section-featured" style="padding-top: var(--space-xl);">
+<div class="container">
+<div class="latest-grid newsroom-grid">
+<!-- Manually Rendered Cards -->
+<div class="story-card reveal-element">
+<div class="story-img-container">
+<img alt="How to Sell on Amazon UAE While Working Full Time" class="story-img" height="450" src="assets/images/sell-on-amazon-uae-working-full-time.png" width="800"/>
+</div>
+<div class="story-content">
+<span class="story-category">Company Updates</span>
+<h3 class="story-title"><a href="articles/sell-on-amazon-uae-working-full-time.html">How to Sell on Amazon UAE While Working Full Time: The Complete Guide</a></h3>
+<p class="story-desc">A step-by-step roadmap for corporate professionals to build a profitable Amazon FBA side business in the UAE without sacrificing their primary income.</p>
+<div class="story-footer">
+<span class="story-date">June 23, 2026</span>
+<span class="story-readtime">9 MIN READ</span>
+</div>
+</div>
+</div>
+<div class="story-card reveal-element">
+<div class="story-img-container">
+<img alt="Aoura E-Commerce Service" class="story-img" height="450" src="assets/images/aoura-ecommerce-services.png" width="800"/>
+</div>
+<div class="story-content">
+<span class="story-category">Company Updates</span>
+<h3 class="story-title"><a href="articles/aoura-ecommerce-service-amazon-selling-experts.html">Aoura E-Commerce Service: The Complete Guide to Selling on Amazon &amp; Noon UAE</a></h3>
+<p class="story-desc">How Dubai's premier e-commerce agency provides end-to-end account management, verified sourcing, product photography, and high-ROAS advertising to scale online brands.</p>
+<div class="story-footer">
+<span class="story-date">June 22, 2026</span>
+<span class="story-readtime">9 MIN READ</span>
+</div>
+</div>
+</div>
+<div class="story-card reveal-element">
+<div class="story-img-container">
+<img alt="How to Find a Winning Product on Amazon UAE" class="story-img" height="450" src="assets/images/find-winning-product-amazon-uae.jpg" width="800"/>
+</div>
+<div class="story-content">
+<span class="story-category">Company Updates</span>
+<h3 class="story-title"><a href="articles/find-winning-product-amazon-uae.html">How to Find a Winning Product on Amazon UAE: The Aoura Process</a></h3>
+<p class="story-desc">The exact 5-step data-driven validation process to identify high-margin, high-demand products and avoid costly launching mistakes in the UAE e-commerce market.</p>
+<div class="story-footer">
+<span class="story-date">June 21, 2026</span>
+<span class="story-readtime">8 MIN READ</span>
+</div>
+</div>
+</div>
+<div class="story-card reveal-element">
+<div class="story-img-container">
+<img alt="Amazon vs Noon UAE" class="story-img" height="450" src="assets/images/amazon-vs-noon-uae.jpg" width="800"/>
+</div>
+<div class="story-content">
+<span class="story-category">Company Updates</span>
+<h3 class="story-title"><a href="articles/amazon-vs-noon-uae.html">Amazon vs Noon UAE: The Ultimate E-commerce Seller Comparison</a></h3>
+<p class="story-desc">Analyzing audience reach, referral commissions, FBA vs FBN fulfilment, and backend merchant interfaces for brands operating in the Middle East.</p>
+<div class="story-footer">
+<span class="story-date">June 20, 2026</span>
+<span class="story-readtime">5 MIN READ</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Area Placeholder -->
+<div id="global-footer"></div>
+<!-- Interactive Client-side Search Overlay -->
+<div aria-hidden="true" class="search-overlay">
+<div class="search-container">
+<div class="search-header">
+<input aria-label="Search articles" class="search-input" placeholder="Type key terms to search news..." type="text"/>
+<button aria-label="Close Search" class="search-close">×</button>
+</div>
+<div class="search-results">
+<!-- Filled dynamically in app.js -->
+</div>
+</div>
+</div>
+<!-- Scripts -->
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/app.js"></script>
+<noscript>
+<div style="background:#000; color:#fff; padding:20px;">
+<h2>Aoura Insights Navigation</h2>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="newsroom.html">Newsroom</a></li>
+<li><a href="investments.html">Investments</a></li>
+<li><a href="product-launches.html">Product Launches</a></li>
+<li><a href="company-updates.html">Company Updates</a></li>
+<li><a href="partnerships.html">Partnerships</a></li>
+<li><a href="investor-relations.html">Investor Relations</a></li>
+<li><a href="branches.html">Branches</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+</div>
+</noscript></body>
 </html>

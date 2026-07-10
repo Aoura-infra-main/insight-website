@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!--
 ================================================================================
 FILE: investor-relations.html
@@ -14,81 +15,106 @@ LINES 156-180: Search System Overlay markup and main JS inclusion.
 -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investor Relations - Aoura Insights</title>
-    <meta name="description" content="Annual reports, quarterly updates, financial announcements, and shareholder information for Aoura Group.">
-    <link rel="icon" type="image/png" href="assets/logo/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://aouragrp.com/investor-relations.html">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Investor Relations - Aoura Insights</title>
+<meta content="Annual reports, quarterly updates, financial announcements, and shareholder information for Aoura Group." name="description"/>
+<link href="assets/logo/favicon.png" rel="icon" type="image/png"/>
+<link as="style" href="assets/css/styles.css" rel="preload"/>\n    <link href="assets/css/styles.css" rel="stylesheet"/>
+<!-- Canonical URL -->
+<link href="https://aouragrp.com/investor-relations.html" rel="canonical"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://aouragrp.com/investor-relations.html" property="og:url"/>
+<meta content="Investor Relations - Aoura Insights" property="og:title"/>
+<meta content="Annual reports, quarterly updates, financial announcements, and shareholder information for Aoura Group." property="og:description"/>
+<meta content="https://aouragrp.com/assets/logo/logo.jpg" property="og:image"/>
+<!-- Twitter -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Investor Relations - Aoura Insights" name="twitter:title"/>
+<meta content="Annual reports, quarterly updates, financial announcements, and shareholder information for Aoura Group." name="twitter:description"/>
+<meta content="https://aouragrp.com/assets/logo/logo.jpg" name="twitter:image"/>
+<!-- JSON-LD Structured Data Schema -->
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aouragrp.com/investor-relations.html">
-    <meta property="og:title" content="Investor Relations - Aoura Insights">
-    <meta property="og:description" content="Annual reports, quarterly updates, financial announcements, and shareholder information for Aoura Group.">
-    <meta property="og:image" content="https://aouragrp.com/assets/logo/logo.jpg">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Investor Relations - Aoura Insights">
-    <meta name="twitter:description" content="Annual reports, quarterly updates, financial announcements, and shareholder information for Aoura Group.">
-    <meta name="twitter:image" content="https://aouragrp.com/assets/logo/logo.jpg">
-
-    <!-- JSON-LD Structured Data Schema -->
-    <script type="application/ld+json">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Investor Relations - Aoura Insights",
+  "description": "Annual reports, quarterly updates, financial announcements, and shareholder information for Aoura Group.",
+  "url": "https://aouragrp.com/investor-relations.html",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": []
+  }
+}</script>\n<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
     {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "url": "https://aouragrp.com/investor-relations.html",
-      "name": "Investor Relations - Aoura Insights",
-      "description": "Annual reports, quarterly updates, financial announcements, and shareholder information for Aoura Group."
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://aouragrp.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Investor Relations",
+      "item": "https://aouragrp.com/investor-relations.html"
     }
-    </script>
-</head>
+  ]
+}</script>\n</head>
 <body>
-
-    <!-- Floating Sticky Navbar Placeholder -->
-    <div id="global-header"></div>
-
-    <!-- Channel Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <span class="text-meta hero-meta">CHANNEL</span>
-            <h1 class="hero-title">Investor Relations</h1>
-            <p class="text-lead hero-desc">Corporate governance logs, financial filings, annual disclosures, and quarterly performance sheets for Aoura Group's global stakeholder network.</p>
-        </div>
-    </header>
-
-    <!-- Dynamic Category Grid -->
-    <section class="section-featured" style="padding-top: var(--space-xl);">
-        <div class="container">
-            <div class="latest-grid category-grid">
-                <!-- Dynamically Rendered via assets/js/app.js -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Area Placeholder -->
-    <div id="global-footer"></div>
-
-    <!-- Interactive Client-side Search Overlay -->
-    <div class="search-overlay" aria-hidden="true">
-        <div class="search-container">
-            <div class="search-header">
-                <input type="text" class="search-input" placeholder="Type key terms to search news..." aria-label="Search articles">
-                <button class="search-close" aria-label="Close Search">&times;</button>
-            </div>
-            <div class="search-results">
-                <!-- Filled dynamically in app.js -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/layout.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/app.js"></script>
-</body>
+<!-- Floating Sticky Navbar Placeholder -->
+<div id="global-header"></div>
+<!-- Channel Hero Section -->
+<header class="hero">
+<div class="container">
+<span class="text-meta hero-meta">CHANNEL</span>
+<h1 class="hero-title">Investor Relations</h1>
+<p class="text-lead hero-desc">Corporate governance logs, financial filings, annual disclosures, and quarterly performance sheets for Aoura Group's global stakeholder network.</p>
+</div>
+</header>
+<!-- Dynamic Category Grid -->
+<section class="section-featured" style="padding-top: var(--space-xl);">
+<div class="container">
+<div class="latest-grid category-grid">
+<!-- Dynamically Rendered via assets/js/app.js -->
+</div>
+</div>
+</section>
+<!-- Footer Area Placeholder -->
+<div id="global-footer"></div>
+<!-- Interactive Client-side Search Overlay -->
+<div aria-hidden="true" class="search-overlay">
+<div class="search-container">
+<div class="search-header">
+<input aria-label="Search articles" class="search-input" placeholder="Type key terms to search news..." type="text"/>
+<button aria-label="Close Search" class="search-close">×</button>
+</div>
+<div class="search-results">
+<!-- Filled dynamically in app.js -->
+</div>
+</div>
+</div>
+<!-- Scripts -->
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/app.js"></script>
+<noscript>
+<div style="background:#000; color:#fff; padding:20px;">
+<h2>Aoura Insights Navigation</h2>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="newsroom.html">Newsroom</a></li>
+<li><a href="investments.html">Investments</a></li>
+<li><a href="product-launches.html">Product Launches</a></li>
+<li><a href="company-updates.html">Company Updates</a></li>
+<li><a href="partnerships.html">Partnerships</a></li>
+<li><a href="investor-relations.html">Investor Relations</a></li>
+<li><a href="branches.html">Branches</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+</div>
+</noscript></body>
 </html>
