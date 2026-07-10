@@ -67,4 +67,26 @@
       <news:title>Amazon vs Noon UAE: The Ultimate E-commerce Seller Comparison</news:title>
     </news:news>
   </url>
+  <url>
+    <loc>https://aouragrp.com/articles/masuma-windshield-washer-fluid-launch.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Aoura Insights</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-10</news:publication_date>
+      <news:title>Aoura Products Launches MASUMA MOX-130 Japanese Windshield Washer Fluid</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://aouragrp.com/articles/aoura-store-launch.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Aoura Insights</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-07-10</news:publication_date>
+      <news:title>Aoura Group Launches the All-New Aoura Store</news:title>
+    </news:news>
+  </url>
 </urlset>
