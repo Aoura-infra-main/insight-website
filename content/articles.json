@@ -82,5 +82,17 @@
     "coverImage": "assets/images/masuma-washer-fluid.jpg",
     "tags": ["Automotive Consumables", "Product Launch", "Car Care", "UAE"],
     "featured": true
+  },
+  {
+    "id": "aoura-store-launch",
+    "category": "Company Updates",
+    "title": "Aoura Group Launches the All-New Aoura Store",
+    "subtitle": "In collaboration with Aoura Technology, we are thrilled to announce the launch of store.aouragrp.com, the premier B2B marketplace for all Aoura Products.",
+    "author": "Aoura Corporate Communications",
+    "date": "July 10, 2026",
+    "readingTime": "3 MIN READ",
+    "coverImage": "assets/images/aoura-store-logo.jpg",
+    "tags": ["Aoura Store", "Aoura Technology", "E-Commerce", "B2B", "Aoura Products"],
+    "featured": true
   }
 ]
