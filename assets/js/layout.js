@@ -15,13 +15,9 @@ const LayoutComponents = {
                 </a>
                 <ul class="nav-menu" id="navbar-menu">
                     <li><a href="${pathPrefix}index.html" class="nav-link">Home</a></li>
-                    <li><a href="${pathPrefix}investments.html" class="nav-link">Investments</a></li>
-                    <li><a href="${pathPrefix}investor-relations.html" class="nav-link">Investor Relations</a></li>
                     <li><a href="${pathPrefix}product-launches.html" class="nav-link">Product Launches</a></li>
-                    <li><a href="${pathPrefix}company-updates.html" class="nav-link">Company Updates</a></li>
-                    <li><a href="${pathPrefix}partnerships.html" class="nav-link">Partnerships</a></li>
-                    <li><a href="${pathPrefix}branches.html" class="nav-link">Branches</a></li>
                     <li><a href="${pathPrefix}newsroom.html" class="nav-link">Newsroom</a></li>
+                    <li><a href="${pathPrefix}company-updates.html" class="nav-link">Company Updates</a></li>
                     <li><a href="${pathPrefix}about.html" class="nav-link">About</a></li>
                     <li>
                         <button class="search-trigger" id="open-search-btn" aria-label="Open Search">
@@ -54,27 +50,19 @@ const LayoutComponents = {
                         <p class="footer-brand-desc">Aoura Group builds distribution infrastructure, supply networks, and e-commerce solutions for businesses across the UAE.</p>
                     </div>
                     <div>
-                        <h3 class="footer-col-title">Main Sections</h3>
-                        <ul class="footer-links">
-                            <li><a href="${pathPrefix}newsroom.html" class="footer-link">Newsroom</a></li>
-                            <li><a href="${pathPrefix}investments.html" class="footer-link">Investments</a></li>
-                            <li><a href="${pathPrefix}company-updates.html" class="footer-link">Company Updates</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="footer-col-title">Publications</h3>
+                        <h3 class="footer-col-title">Editorial Hubs</h3>
                         <ul class="footer-links">
                             <li><a href="${pathPrefix}product-launches.html" class="footer-link">Product Launches</a></li>
-                            <li><a href="${pathPrefix}partnerships.html" class="footer-link">Partnerships</a></li>
-                            <li><a href="${pathPrefix}investor-relations.html" class="footer-link">Investor Relations</a></li>
+                            <li><a href="${pathPrefix}newsroom.html" class="footer-link">Newsroom &amp; Guides</a></li>
+                            <li><a href="${pathPrefix}company-updates.html" class="footer-link">Company Updates</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="footer-col-title">Corporate Portal</h3>
                         <ul class="footer-links">
-                            <li><a href="${pathPrefix}branches.html" class="footer-link">Branches</a></li>
-                            <li><a href="${pathPrefix}about.html" class="footer-link">About Publication</a></li>
+                            <li><a href="${pathPrefix}about.html" class="footer-link">About Insights</a></li>
                             <li><a href="https://aouragrp.com" target="_blank" rel="noopener" class="footer-link">Aoura Group &rarr;</a></li>
+                            <li><a href="https://store.aouragrp.com" target="_blank" rel="noopener" class="footer-link">Aoura Store &rarr;</a></li>
                         </ul>
                     </div>
                 </div>

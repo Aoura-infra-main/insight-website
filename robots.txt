@@ -2,5 +2,5 @@ User-agent: *
 Allow: /
 Disallow: /article.html?id=*
 
-Sitemap: https://aouragrp.com/sitemap.xml
-Sitemap: https://aouragrp.com/sitemap-news.xml
+Sitemap: https://insight.aouragrp.com/sitemap.xml
+Sitemap: https://insight.aouragrp.com/sitemap-news.xml

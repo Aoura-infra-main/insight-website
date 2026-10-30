@@ -41,12 +41,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     } else if (pageName === 'newsroom.html') {
         renderNewsroomPage();
     } else if ([
-        'investments.html', 
-        'investor-relations.html', 
         'product-launches.html', 
-        'company-updates.html', 
-        'partnerships.html', 
-        'branches.html'
+        'company-updates.html'
     ].includes(pageName)) {
         renderCategoryPage(pageName);
     } else */ if (isArticlePage) {
@@ -240,12 +236,9 @@ function renderHomepage() {
  */
 function renderCategoryPage(filename) {
     const categoryMapping = {
-        'investments.html': 'Investments',
-        'investor-relations.html': 'Investor Relations',
         'product-launches.html': 'Product Launches',
         'company-updates.html': 'Company Updates',
-        'partnerships.html': 'Partnerships',
-        'branches.html': 'Branches'
+        'newsroom.html': 'Newsroom'
     };
 
     const targetCategory = categoryMapping[filename];
