@@ -1,5 +1,43 @@
 [
   {
+    "id": "aoura-double-side-dotted-gloves-launch",
+    "category": "Product Launches",
+    "title": "Aoura Products Launches High-Density 700g Double-Sided Dotted Safety Gloves",
+    "subtitle": "Expanding the B2B personal protective equipment (PPE) catalog with dual-sided PVC traction dots and heavy-duty 700g ribbed knit construction engineered for UAE logistics and manufacturing operations.",
+    "author": "Aoura Products Press Office",
+    "date": "October 30, 2026",
+    "readingTime": "4 MIN READ",
+    "coverImage": "assets/images/aoura-dotted-gloves-hero.jpg",
+    "tags": [
+      "Safety Gear",
+      "PPE",
+      "Product Launch",
+      "Work Gloves",
+      "Aoura Products",
+      "UAE"
+    ],
+    "featured": true
+  },
+  {
+    "id": "aoura-products-launches-stanley-tools-collection",
+    "category": "Product Launches",
+    "title": "Aoura Products Expands Hardware Distribution with Stanley Professional Hand Tools Line",
+    "subtitle": "Integrating globally trusted jobsite cutting and measurement equipment into Aoura\u2019s regional fulfillment network, led by the Stanley 18mm Snap-Off Knife and 5M Auto-Lock Tape Measure.",
+    "author": "Aoura Products Press Office",
+    "date": "October 24, 2026",
+    "readingTime": "5 MIN READ",
+    "coverImage": "assets/images/stanley-snap-off-knife-18mm.jpg",
+    "tags": [
+      "Hardware Tools",
+      "Stanley Tools",
+      "Product Launch",
+      "Hand Tools",
+      "Aoura Products",
+      "UAE"
+    ],
+    "featured": true
+  },
+  {
     "id": "aoura-group-acquires-alphalake-technologies",
     "category": "Investments",
     "title": "Aoura Group Acquires Alphalake Technologies",

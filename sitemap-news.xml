@@ -2,6 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://aouragrp.com/articles/aoura-double-side-dotted-gloves-launch.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Aoura Insights</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-30</news:publication_date>
+      <news:title>Aoura Products Launches High-Density 700g Double-Sided Dotted Safety Gloves</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://aouragrp.com/articles/aoura-products-launches-stanley-tools-collection.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Aoura Insights</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-24</news:publication_date>
+      <news:title>Aoura Products Expands Hardware Distribution with Stanley Professional Hand Tools Line</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://aouragrp.com/articles/aoura-laser-protective-lens-launch.html</loc>
     <news:news>
       <news:publication>
